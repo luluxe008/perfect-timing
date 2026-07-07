@@ -62,4 +62,3 @@ func _physics_process(_delta: float) -> void:
 				_sucess()
 		else:
 			_failure()
-			
