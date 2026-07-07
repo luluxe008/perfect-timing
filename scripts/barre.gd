@@ -1,6 +1,6 @@
 extends Node2D
 
-
+@export var moving := true
 @export var speed = 5
 var direction = 1
 
@@ -11,6 +11,8 @@ enum BarreZone{
 	Meh
 }
 
+
+
 signal barre_hit(BarreZone)
 
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +22,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	
+	if not moving:
+		return
 	$cursor.position.x += speed * direction
 	
 	if Input.is_action_just_pressed("ui_accept"):
