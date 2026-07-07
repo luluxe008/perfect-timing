@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://jo0j1blhyflm"]
+
+[ext_resource type="Script" uid="uid://brkayi3fcfg1u" path="res://scripts/barre.gd" id="1_typoi"]
+[ext_resource type="Texture2D" uid="uid://bcaiptukedeed" path="res://icon.svg" id="2_lvrmi"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u0us2"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4twh4"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u0us2"]
+
+[node name="Barremanager" type="Node2D" unique_id=1290311376]
+self_modulate = Color(1, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_u0us2")
+
+[node name="barre" type="Sprite2D" parent="." unique_id=782169938]
+visibility_layer = 513
+position = Vector2(546.99994, 244)
+scale = Vector2(8.5234375, 1)
+texture = ExtResource("2_lvrmi")
+script = ExtResource("1_typoi")
+
+[node name="zone" type="MeshInstance2D" parent="barre" unique_id=393856841]
+modulate = Color(0, 1, 0, 1)
+self_modulate = Color(0, 1, 0, 1)
+position = Vector2(-2.346463, -0.9999999)
+scale = Vector2(6.144821, 63.999996)
+mesh = SubResource("CylinderMesh_4twh4")
+
+[node name="curseur" type="MeshInstance2D" parent="barre" unique_id=806561556]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(-54.43813, -0.9999995)
+rotation = 3.1415927
+scale = Vector2(2.4403386, -59.850006)
+mesh = SubResource("CylinderMesh_u0us2")
