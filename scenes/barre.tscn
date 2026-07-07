@@ -1,36 +1,108 @@
 [gd_scene format=3 uid="uid://jo0j1blhyflm"]
 
 [ext_resource type="Script" uid="uid://brkayi3fcfg1u" path="res://scripts/barre.gd" id="1_typoi"]
-[ext_resource type="Texture2D" uid="uid://bcaiptukedeed" path="res://icon.svg" id="2_lvrmi"]
+[ext_resource type="Texture2D" uid="uid://dn1h3qswfu4w3" path="res://img/barre_background.png" id="2_typoi"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u0us2"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_4twh4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_typoi"]
+size = Vector2(63, 98)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_u0us2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvrmi"]
+size = Vector2(104, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le24c"]
+size = Vector2(208, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krtcf"]
+size = Vector2(228, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjxp1"]
+size = Vector2(232, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44saq"]
+size = Vector2(8.000008, 82)
+
+[sub_resource type="QuadMesh" id="QuadMesh_44saq"]
+size = Vector2(10, 75)
 
 [node name="Barremanager" type="Node2D" unique_id=1290311376]
 self_modulate = Color(1, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_u0us2")
-
-[node name="barre" type="Sprite2D" parent="." unique_id=782169938]
-visibility_layer = 513
-position = Vector2(546.99994, 244)
-scale = Vector2(8.5234375, 1)
-texture = ExtResource("2_lvrmi")
 script = ExtResource("1_typoi")
 
-[node name="zone" type="MeshInstance2D" parent="barre" unique_id=393856841]
-modulate = Color(0, 1, 0, 1)
-self_modulate = Color(0, 1, 0, 1)
-position = Vector2(-2.346463, -0.9999999)
-scale = Vector2(6.144821, 63.999996)
-mesh = SubResource("CylinderMesh_4twh4")
+[node name="background" type="Sprite2D" parent="." unique_id=1088984724]
+position = Vector2(576, 48)
+scale = Vector2(8, 3)
+texture = ExtResource("2_typoi")
 
-[node name="curseur" type="MeshInstance2D" parent="barre" unique_id=806561556]
-modulate = Color(1, 0, 0, 1)
-self_modulate = Color(1, 0, 0, 1)
-position = Vector2(-54.43813, -0.9999995)
-rotation = 3.1415927
-scale = Vector2(2.4403386, -59.850006)
-mesh = SubResource("CylinderMesh_u0us2")
+[node name="perfect" type="Area2D" parent="." unique_id=1565155340 groups=["perfect"]]
+position = Vector2(568, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="perfect" unique_id=182596456]
+position = Vector2(8.5, -17)
+shape = SubResource("RectangleShape2D_typoi")
+
+[node name="good" type="Node2D" parent="." unique_id=2035940167]
+
+[node name="good" type="Area2D" parent="good" unique_id=507148871 groups=["good"]]
+position = Vector2(600, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="good/good" unique_id=1591746885]
+position = Vector2(60, -33)
+shape = SubResource("RectangleShape2D_lvrmi")
+
+[node name="good2" type="Area2D" parent="good" unique_id=1180259311 groups=["good"]]
+position = Vector2(504, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="good/good2" unique_id=2013920763]
+position = Vector2(-12, -21)
+shape = SubResource("RectangleShape2D_lvrmi")
+
+[node name="ok" type="Node2D" parent="." unique_id=1618254392]
+
+[node name="ok" type="Area2D" parent="ok" unique_id=429319121 groups=["ok"]]
+position = Vector2(368, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ok/ok" unique_id=175376195]
+position = Vector2(-32, -24)
+shape = SubResource("RectangleShape2D_le24c")
+
+[node name="ok2" type="Area2D" parent="ok" unique_id=1226546182 groups=["ok"]]
+position = Vector2(720, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ok/ok2" unique_id=615224772]
+position = Vector2(96, -25)
+shape = SubResource("RectangleShape2D_le24c")
+
+[node name="meh" type="Node2D" parent="." unique_id=148474579]
+
+[node name="ok" type="Area2D" parent="meh" unique_id=1872548776 groups=["meh"]]
+position = Vector2(176, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="meh/ok" unique_id=373420291]
+position = Vector2(-58, -24)
+shape = SubResource("RectangleShape2D_krtcf")
+
+[node name="ok2" type="Area2D" parent="meh" unique_id=1306316026 groups=["meh"]]
+position = Vector2(1016, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="meh/ok2" unique_id=1634970370]
+position = Vector2(20, -19)
+shape = SubResource("RectangleShape2D_jjxp1")
+
+[node name="cursor" type="Area2D" parent="." unique_id=1664635124]
+position = Vector2(9, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cursor" unique_id=1876478579]
+position = Vector2(-5.000004, -25)
+shape = SubResource("RectangleShape2D_44saq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="cursor" unique_id=1388732582]
+position = Vector2(1, -24)
+rect = Rect2(-10, -10, 9.000006, 20)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="cursor" unique_id=1752025045]
+position = Vector2(-5, -21)
+scale = Vector2(0.8, 1)
+mesh = SubResource("QuadMesh_44saq")
