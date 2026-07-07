@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cx8r3lst03nke"]
+
+[ext_resource type="Script" uid="uid://cds0yuljyglwl" path="res://scripts/QTE.gd" id="1_0b1k5"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_44saq"]
+radius = 20.0
+height = 40.0
+
+[node name="QTE" type="Node2D" unique_id=294802693]
+script = ExtResource("1_0b1k5")
+wait_time = null
+metadata/_edit_group_ = true
+
+[node name="outer" type="MeshInstance2D" parent="." unique_id=85692191]
+modulate = Color(0.54509807, 0, 0, 1)
+scale = Vector2(2, 2)
+mesh = SubResource("SphereMesh_44saq")
+
+[node name="inner" type="MeshInstance2D" parent="." unique_id=1999579236]
+modulate = Color(0.21568628, 0.21568628, 0.21568628, 1)
+mesh = SubResource("SphereMesh_44saq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1684208218]
+wait_time = 5.0
+one_shot = true
+
+[node name="Label" type="Label" parent="." unique_id=188595489]
+offset_left = -24.0
+offset_top = -11.0
+offset_right = 23.0
+offset_bottom = 12.0
+text = "PRESS"
